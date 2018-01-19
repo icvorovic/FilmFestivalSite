@@ -1,0 +1,114 @@
+# Create schemas
+
+# Create tables
+CREATE TABLE IF NOT EXISTS Korisnik
+(
+    KorisnickoIme VARCHAR(30) NOT NULL,
+    Ime VARCHAR(20),
+    Prezime VARCHAR(20),
+    Lozinka VARCHAR(20),
+    KontaktTelefon VARCHAR(20),
+    Email VARCHAR(20) UNIQUE,
+    Tip VARCHAR(10),
+    MaksBrojUlaznica INT,
+    PRIMARY KEY(KorisnickoIme)
+);
+
+CREATE TABLE IF NOT EXISTS Festival
+(
+    IDFestival INT NOT NULL,
+    Naziv VARCHAR(50),
+    DatumPocetka DATE,
+    DatumKraja DATE,
+    Informacije VARCHAR(200),
+    Mesta VARCHAR(300),
+    PRIMARY KEY(IDFestival)
+);
+
+CREATE TABLE IF NOT EXISTS Film
+(
+    IDFilm INT NOT NULL,
+    Naziv VARCHAR(50),
+    OriginalniNaziv VARCHAR(50) UNIQUE,
+    GodinaIzdanja VARCHAR(20),
+    KratakOpis VARCHAR(200),
+    IDFestival INT NOT NULL,
+    Reziser VARCHAR(50),
+    Glumci VARCHAR(300),
+    Trajanje VARCHAR(20),
+    Zemlja VARCHAR(30),
+    ImdbLink VARCHAR(100),
+    RottenTomatoLink VARCHAR(100),
+    YouTubeLink VARCHAR(100),
+    PRIMARY KEY(IDFilm)
+);
+
+CREATE TABLE IF NOT EXISTS Projekcija
+(
+    IDProjekcija INT NOT NULL,
+    Mesto VARCHAR(20),
+    Sala VARCHAR(20),
+    Vreme DATETIME,
+    CenaUlaznice INT,
+    IDFestival INT NOT NULL,
+    IDFilm INT NOT NULL,
+    PRIMARY KEY(IDProjekcija)
+);
+
+CREATE TABLE IF NOT EXISTS Rezervacija
+(
+    IDRezervacija INT NOT NULL,
+    BrojUlaznica INT,
+    Kod VARCHAR(10) NOT NULL,
+    VremeRezervacije DATETIME,
+    Status VARCHAR(10),
+    KorisnickoIme VARCHAR(30) NOT NULL,
+    IDProjekcija INT NOT NULL,
+    PRIMARY KEY(IDRezervacija)
+);
+
+CREATE TABLE IF NOT EXISTS Komentar
+(
+    IDKomentar INT NOT NULL,
+    KorisnickoIme VARCHAR(30) NOT NULL,
+    IDFilm INT NOT NULL,
+    Sadrzaj VARCHAR(50) NOT NULL,
+    Ocena INT NOT NULL,
+    PRIMARY KEY(IDKomentar)
+);
+
+
+# Create FKs
+ALTER TABLE Rezervacija
+    ADD    FOREIGN KEY (KorisnickoIme)
+    REFERENCES Korisnik(KorisnickoIme)
+;
+    
+ALTER TABLE Komentar
+    ADD    FOREIGN KEY (KorisnickoIme)
+    REFERENCES Korisnik(KorisnickoIme)
+;
+    
+ALTER TABLE Komentar
+    ADD    FOREIGN KEY (IDFilm)
+    REFERENCES Film(IDFilm)
+;
+    
+ALTER TABLE Projekcija
+    ADD    FOREIGN KEY (IDFilm)
+    REFERENCES Film(IDFilm)
+;
+    
+ALTER TABLE Projekcija
+    ADD    FOREIGN KEY (IDFestival)
+    REFERENCES Festival(IDFestival)
+;
+    
+ALTER TABLE Rezervacija
+    ADD    FOREIGN KEY (IDProjekcija)
+    REFERENCES Projekcija(IDProjekcija)
+;
+    
+
+# Create Indexes
+
