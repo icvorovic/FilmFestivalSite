@@ -1,0 +1,111 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 20, 2018, 1:13:38 AM
+    Author     : Igor
+*/
+
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+h1,h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: .5em;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 72px;
+    line-height: 1.2em;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 48px
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 40px
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 30px;
+    color: #154191;
+    font-weight: 400;
+    margin-bottom: .2em;
+}
+
+p {
+    margin-bottom: 0;
+    font-size: 14px
+}
+
+.brown {
+    background-color: #503f29 !important;
+}
+
+.navbar {
+    padding: 10px 20px;
+    background-color:#0d47a1;
+}
+
+.tab-content {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    color: white;    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/film_1920.jpg");
+}
+
+h1, h2, h3 i {
+    margin-top: -3px !important;
+    margin-right: 5px !important;
+}
+
+.center-div {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    display: inline;
+}
+
+.flex-center {
+    display: flex;
+}
+
+input[type=text]:not(.browser-default) {
+    border-bottom: 2px solid #E9E6E6 !important;
+    font-size: 2rem;
+}
+
+input[type=password]:not(.browser-default) {
+    border-bottom: 2px solid #E9E6E6 !important;
+    font-size: 2rem;
+}
+
+input[type=email]:not(.browser-default) {
+    border-bottom: 2px solid #E9E6E6 !important;
+    font-size: 2rem;
+}
+
+.input-field label {
+    color: #E9E6E6 !important;
+    font-size: 1.25rem;
+}
+
+.input-field {
+    margin-top: 0 !important;
+}

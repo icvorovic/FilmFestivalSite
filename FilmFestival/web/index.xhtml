@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"></link>
+        <link rel="stylesheet" href="css/style.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"></link>
+                
+  <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://use.fontawesome.com/d21fc6b8a6.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"></link>
+        
+    </h:head>
+    <h:body>
+      <nav class="navbar brown nav-extended">
+        <div class="nav-wrapper">
+          <h2><i class="fa fa-film" aria-hidden="true"></i> Filmski Festival</h2>
+        </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+            <li class="tab"><a class="active" href="#test1"><i class="fa fa-home" aria-hidden="true"></i> Početna</a></li>
+            <li class="tab"><a href="#test2"><i class="fa fa-sign-in" aria-hidden="true"></i> Prijavi se</a></li>
+            <li class="tab"><a href="#test3"><i class="fa fa-user-plus" aria-hidden="true"></i> Registracija</a></li>
+            <li class="tab"><a href="#test4"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Promeni sifru</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div id="test1" class="tab-content">
+        <h1>Dobrodošli!</h1>
+      </div>
+      <div id="test2" class="tab-content">
+        <h1>Prijavi se</h1>
+        <div class="row flex-center">
+          <form class="col l4 m8 s10 center-div">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="user_name_login" name="username" type="text" class="validate" required=""></input>
+                <label for="user_name_login"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Korisnicko ime</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password_login" name="password" type="password" class="validate" required=""></input>
+                <label for="password_login"><i class="fa fa-lock" aria-hidden="true"></i> Lozinka</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                  <button class="btn waves-effect waves-blue" type="submit" name="action">PRIJAVI SE</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="test3" class="tab-content">
+        <h1>Registrujte svoj nalog</h1>
+        <div class="row flex-center">
+            <form class="col l4 m8 s10 center-div">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="first_name" name="first_name" type="text" class="validate" required=""></input>
+                  <label for="first_name"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Ime</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="last_name" name="last_name" type="text" class="validate" required=""></input>
+                  <label for="last_name"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Prezime</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="user_name_login" name="username" type="text" class="validate" required=""></input>
+                  <label for="user_name_login"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Korisnicko ime</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password_register" name="password" type="password" class="validate" required=""></input>
+                  <label for="password_register"><i class="fa fa-lock" aria-hidden="true"></i> Lozinka</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                    <input id="confirm_password" name="confirm_pass" type="password" required=""/>
+                    <label for="confirm_password"><i class="fa fa-lock" aria-hidden="true"></i> Potvrdite lozinku</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                    <input id="email_register" name="email" type="email" required=""/>
+                    <label for="email_register"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                    <input id="phone_register" name="phone" type="text" required=""/>
+                    <label for="phone_register"><i class="fa fa-phone-square" aria-hidden="true"></i> Telefon</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-blue" type="submit" name="action">REGISTRUJ SE</button>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div id="test4" class="tab-content">
+        <h1>Promenite svoju šifru</h1>
+        <div class="row flex-center">
+          <form class="col l4 m8 s10 center-div">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="user_name_reset" name="username" type="text" class="validate" required=""></input>
+                <label for="user_name_reset"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Korisnicko ime</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password_reset" name="password" type="password" class="validate" required=""></input>
+                <label for="password_reset"><i class="fa fa-lock" aria-hidden="true"></i> Lozinka</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="new_password_reset" name="new_password" type="password" class="validate" required=""></input>
+                <label for="new_password_reset"><i class="fa fa-lock" aria-hidden="true"></i> Nova lozinka</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                  <button class="btn waves-effect waves-blue" type="submit" name="action">PROMENI</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </h:body>
+</html>
+

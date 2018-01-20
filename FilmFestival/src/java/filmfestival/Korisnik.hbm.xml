@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 20, 2018 12:55:53 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="filmfestival.Korisnik" table="korisnik" catalog="filmskifestival" optimistic-lock="version">
+        <id name="korisnickoIme" type="string">
+            <column name="KorisnickoIme" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="ime" type="string">
+            <column name="Ime" length="20" />
+        </property>
+        <property name="prezime" type="string">
+            <column name="Prezime" length="20" />
+        </property>
+        <property name="lozinka" type="string">
+            <column name="Lozinka" length="20" />
+        </property>
+        <property name="kontaktTelefon" type="string">
+            <column name="KontaktTelefon" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="20" unique="true" />
+        </property>
+        <property name="tip" type="string">
+            <column name="Tip" length="10" />
+        </property>
+        <property name="maksBrojUlaznica" type="java.lang.Integer">
+            <column name="MaksBrojUlaznica" />
+        </property>
+        <set name="rezervacijas" table="rezervacija" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KorisnickoIme" length="30" not-null="true" />
+            </key>
+            <one-to-many class="filmfestival.Rezervacija" />
+        </set>
+        <set name="komentars" table="komentar" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KorisnickoIme" length="30" not-null="true" />
+            </key>
+            <one-to-many class="filmfestival.Komentar" />
+        </set>
+    </class>
+</hibernate-mapping>

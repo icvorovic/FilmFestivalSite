@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 20, 2018 12:55:53 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="filmfestival.Festival" table="festival" catalog="filmskifestival" optimistic-lock="version">
+        <id name="idfestival" type="int">
+            <column name="IDFestival" />
+            <generator class="assigned" />
+        </id>
+        <property name="naziv" type="string">
+            <column name="Naziv" length="50" />
+        </property>
+        <property name="datumPocetka" type="date">
+            <column name="DatumPocetka" length="10" />
+        </property>
+        <property name="datumKraja" type="date">
+            <column name="DatumKraja" length="10" />
+        </property>
+        <property name="informacije" type="string">
+            <column name="Informacije" length="200" />
+        </property>
+        <property name="mesta" type="string">
+            <column name="Mesta" length="300" />
+        </property>
+        <set name="projekcijas" table="projekcija" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFestival" not-null="true" />
+            </key>
+            <one-to-many class="filmfestival.Projekcija" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 20, 2018 12:55:53 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="filmfestival.Komentar" table="komentar" catalog="filmskifestival" optimistic-lock="version">
+        <id name="idkomentar" type="int">
+            <column name="IDKomentar" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="film" class="filmfestival.Film" fetch="select">
+            <column name="IDFilm" not-null="true" />
+        </many-to-one>
+        <many-to-one name="korisnik" class="filmfestival.Korisnik" fetch="select">
+            <column name="KorisnickoIme" length="30" not-null="true" />
+        </many-to-one>
+        <property name="sadrzaj" type="string">
+            <column name="Sadrzaj" length="50" not-null="true" />
+        </property>
+        <property name="ocena" type="int">
+            <column name="Ocena" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
