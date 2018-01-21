@@ -10,11 +10,10 @@ and open the template in the editor.
 
 body, html {
     height: 100%;
-    padding: 0;
-    margin: 0;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/film_1920.jpg");
 }
 
 h1,h2, h3, h4, h5, h6, p {
@@ -63,11 +62,7 @@ p {
 }
 
 .tab-content {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
     color: white;    
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/film_1920.jpg");
 }
 
 h1, h2, h3 i {
@@ -108,4 +103,24 @@ input[type=email]:not(.browser-default) {
 
 .input-field {
     margin-top: 0 !important;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+.message-warning {
+    font-size: 25px;
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+    color: #503f29 !important;
 }
