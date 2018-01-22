@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import DBHelpers.FestivalHelper;
 import filmfestival.Festival;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,20 +22,13 @@ import javax.faces.bean.SessionScoped;
 public class FestivalSearchController {
     private Festival festivalSearch = new Festival();
     private List<Festival> searchResult = new ArrayList<>();
+    private FestivalHelper helper = new FestivalHelper();
     private String datumOd = "";
     private String datumDo = "";
     private String naziv = "";
     
     public void searchFestival() {
-        System.out.println("PRETRAGA FESTIVALA");
-        
-        for (int i = 0; i < 3; i++) {
-            Festival f = new Festival();
-            f.setNaziv(naziv);
-            f.setMesta("BABKA, KGBABJA");
-            
-            searchResult.add(f);
-        }
+        searchResult = helper.getListFestival(naziv, datumOd, datumDo);
     }
     
     public Festival getFestivalSearch() {

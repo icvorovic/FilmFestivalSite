@@ -90,7 +90,7 @@
       <div class="row flex-center">
           <div class="col l4 m8 s10 center-div">
               <div class="row">
-                <h:dataTable class="col s12 striped" id="searchResults" value="${festivalSearchController.searchResult}" var="festival" border="1">
+                  <h:dataTable class="col s12 striped" id="searchResults" value="${festivalSearchController.searchResult}" var="festival" border="1">
                   <h:column>
                       <f:facet name="header">Naziv</f:facet>
                       <h:outputText value="${festival.naziv}"/>
